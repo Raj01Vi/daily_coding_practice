@@ -3,6 +3,7 @@ contacts = {}
 while True:
     print("\n--- Contact Book ---")
     print("a - Add New Contact")
+    print("d - Delete Contact")
     print("v - View all Contacts")
     print("s - Search by Name")
     print("q - Quit")
@@ -51,6 +52,15 @@ while True:
             print(f"No contact named '{name_search}' was found.")
         
         print("-" * 40)
+
+    elif choice == "d":
+        name_search = input("Name of contact: ").strip().title()
+
+        if name_search in contacts:
+            del contacts[name_search]
+            print(f"Contact  '{name_search}' deleted successfully.")
+        else:
+            print(f"No contact named '{name_search}' was found.")
 
 
     elif choice == "q":
